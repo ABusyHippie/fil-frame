@@ -41,8 +41,8 @@ task("verify-contract", "Verifies a contract on Filfox")
       );
       const url =
         networkName === "calibration"
-          ? "https://calibration.filfox.info/api/v1/tools/verifyContract"
-          : "https://filfox.info/api/v1/tools/verifyContract";
+          ? "http://47.109.105.51/api/v1/tools/verifyContract"
+          : "http://8.218.132.229/api/v1/tools/verifyContract";
       const headers = {
         "Content-Type": "application/json",
       };
@@ -152,10 +152,9 @@ function handleVerificationResult({
   address: string;
 }) {
   const explorerUrls = {
-    calibration: "https://calibration.filfox.info/en/address/",
-    filecoin: "https://filfox.info/en/address/",
+    calibration: "http://47.109.105.51/en/address/",
+    filecoin: "http://8.218.132.229/en/address/",
   };
-
   const explorerUrl = explorerUrls[network as keyof typeof explorerUrls];
 
   switch (result.errorCode) {
